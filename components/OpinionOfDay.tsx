@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Quote } from "./icons";
 
@@ -25,11 +25,11 @@ const VOICES = [
 
 export default function OpinionOfDay() {
   return (
-    <section id="opinion" className="relative py-20 sm:py-28">
+    <section id="opinion" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="06 / Голоса"
-          eyebrow="Мнение дня"
+          eyebrow="Голоса участников"
           title={
             <>
               Что об этом думают <span className="text-gradient">живые люди</span>

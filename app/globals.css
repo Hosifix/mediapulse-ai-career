@@ -87,11 +87,35 @@
   }
 
   .section-title {
-    @apply font-display text-3xl font-bold leading-[1.05] tracking-tight text-white sm:text-4xl md:text-5xl;
+    @apply font-display text-[1.65rem] font-bold leading-[1.12] tracking-tight text-white xs:text-3xl sm:text-4xl md:text-5xl;
+    text-wrap: balance;
   }
 
   .lead {
-    @apply text-base leading-relaxed text-[color:var(--muted)] sm:text-lg;
+    @apply text-[15px] leading-relaxed text-[color:var(--muted)] sm:text-lg;
+    text-wrap: pretty;
+  }
+
+  /* ---- Editorial labels ---- */
+  .kicker {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[10px] font-bold uppercase leading-none tracking-[0.16em] text-white/80 xs:text-[11px];
+    background: var(--panel);
+    border-color: var(--border);
+  }
+  .kicker-dot {
+    @apply inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-pulse-lime;
+    box-shadow: 0 0 10px var(--lime);
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white/75;
+    background: var(--panel);
+    border-color: var(--border);
+  }
+
+  /* ---- Format badge (publication type) ---- */
+  .fmt {
+    @apply inline-flex items-center gap-1.5 rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider;
   }
 
   /* ---- Surfaces ---- */
@@ -349,6 +373,27 @@
   to { transform: translateX(-50%); }
 }
 
+.ticker-label {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.85rem;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0b1005;
+  background: linear-gradient(135deg, #d6ff5e, #a7e635);
+}
+.ticker-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #0b1005;
+  animation: tick 1.6s ease-in-out infinite;
+}
+
 /* ------------------------------------------------------------------ */
 /*  Reveal on scroll                                                   */
 /* ------------------------------------------------------------------ */
@@ -385,6 +430,35 @@
 @keyframes tick {
   0%, 100% { opacity: 0.5; transform: scale(0.9); }
   50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Mobile tuning — calmer decoration, no horizontal scroll            */
+/* ------------------------------------------------------------------ */
+html,
+body {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .blob {
+    opacity: 0.36;
+    filter: blur(64px);
+  }
+  .blob-magenta {
+    display: none;
+  }
+  .grid-overlay {
+    background-size: 40px 40px;
+    -webkit-mask-image: radial-gradient(circle at 50% 22%, black, transparent 70%);
+    mask-image: radial-gradient(circle at 50% 22%, black, transparent 70%);
+  }
+  .noise-overlay {
+    opacity: 0.03;
+  }
+  section[id] {
+    scroll-margin-top: 76px;
+  }
 }
 
 /* ------------------------------------------------------------------ */

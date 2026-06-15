@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Survey, Mic, Flask, Chart } from "./icons";
 
@@ -39,7 +39,7 @@ const STEPS = [
 
 export default function Method() {
   return (
-    <section id="method" className="relative py-20 sm:py-28">
+    <section id="method" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="02 / Метод"

@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Brain, HeartHand } from "./icons";
 
@@ -18,7 +18,7 @@ const HUMAN_DECIDES = [
 
 export default function MainQuestion() {
   return (
-    <section id="main-question" className="relative py-20 sm:py-28">
+    <section id="main-question" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="01 / Идея"
@@ -29,7 +29,7 @@ export default function MainQuestion() {
               <span className="text-gradient">Но может ли он быть помощником?</span>
             </>
           }
-          intro="«МедиаПульс» исследует, может ли искусственный интеллект помочь подростку выбрать будущую профессию. ИИ может подсказать направления, задать вопросы, показать варианты и объяснить сильные стороны. Но итоговый выбор остаётся за человеком."
+          intro="«МедиаПульс» проверяет, может ли искусственный интеллект подсказать подростку направления, задать вопросы и показать варианты профессий. Это не реклама ИИ, а журналистское исследование — итоговый выбор всё равно остаётся за человеком."
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -79,13 +79,18 @@ export default function MainQuestion() {
         </div>
 
         <Reveal delay={120}>
-          <div className="mt-6 flex items-center gap-4 rounded-3xl border border-white/10 bg-gradient-to-r from-pulse-lime/10 via-transparent to-pulse-magenta/10 p-6 sm:p-7">
-            <div className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/5 sm:flex">
+          <div className="mt-6 flex flex-col gap-3 rounded-3xl border border-white/10 bg-gradient-to-r from-pulse-lime/10 via-transparent to-pulse-magenta/10 p-6 sm:flex-row sm:items-center sm:gap-5 sm:p-7">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/5">
               <span className="font-display text-xl font-bold text-pulse-lime">→</span>
             </div>
-            <p className="text-base font-medium text-white/90 sm:text-lg">
-              ИИ может предложить маршрут. Но идти по нему должен человек.
-            </p>
+            <div>
+              <p className="font-display text-lg font-bold text-white sm:text-xl">
+                Редакция проверяет, где помогает алгоритм, а где нужен живой опыт.
+              </p>
+              <p className="mt-1.5 text-sm text-white/70 sm:text-base">
+                ИИ может предложить маршрут — но идти по нему должен человек.
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>

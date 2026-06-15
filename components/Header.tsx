@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: "Метод", href: "#method" },
   { label: "Советчики", href: "#advisors" },
   { label: "План", href: "#content-plan" },
-  { label: "Вердикт ИИ", href: "#ai-verdict" },
+  { label: "Вердикт", href: "#ai-verdict" },
   { label: "Форматы", href: "#formats" },
   { label: "KPI", href: "#kpi" },
 ];
@@ -33,19 +33,44 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      {/* Masthead strip — editorial issue line */}
+      <div
+        className={`overflow-hidden border-b border-white/10 bg-ink-950/70 backdrop-blur-md transition-all duration-300 ${
+          scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+        }`}
+        aria-hidden={scrolled}
+      >
+        <div className="container-px flex h-9 items-center justify-between text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55 xs:text-[11px]">
+          <div className="flex items-center gap-2.5">
+            <span className="inline-flex items-center gap-1.5 text-pulse-lime">
+              <span className="h-1.5 w-1.5 rounded-full bg-pulse-lime tick-pulse" />
+              Выпуск 01
+            </span>
+            <span className="hidden h-3 w-px bg-white/15 sm:block" />
+            <span className="hidden sm:inline">Редакционное исследование</span>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <span>15–23 июня</span>
+            <span className="hidden h-3 w-px bg-white/15 sm:block" />
+            <span className="hidden text-white/45 sm:inline">VK · Telegram · Подкаст</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Nav bar */}
       <div
         className={`transition-all duration-300 ${
           scrolled
-            ? "border-b border-white/10 bg-ink-950/70 backdrop-blur-xl"
+            ? "border-b border-white/10 bg-ink-950/75 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="container-px flex h-16 items-center justify-between gap-4 sm:h-20">
+        <div className="container-px flex h-14 items-center justify-between gap-4 sm:h-16">
           <a href="#hero" className="group flex items-center gap-2.5" aria-label="МедиаПульс — на главную">
             <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-pulse-lime to-pulse-blue">
               <span className="h-2 w-2 rounded-full bg-ink-950 tick-pulse" />
             </span>
-            <span className="font-display text-lg font-bold tracking-tight text-white">
+            <span className="font-display text-base font-bold tracking-tight text-white sm:text-lg">
               Медиа<span className="text-pulse-lime">Пульс</span>
             </span>
           </a>
@@ -109,10 +134,14 @@ export default function Header() {
           onClick={() => setOpen(false)}
         />
         <nav
-          className={`absolute inset-x-3 top-20 origin-top rounded-3xl border border-white/10 bg-ink-900/95 p-4 shadow-2xl transition-all duration-300 ${
+          className={`absolute inset-x-3 top-[4.5rem] origin-top rounded-3xl border border-white/10 bg-ink-900/95 p-4 shadow-2xl transition-all duration-300 ${
             open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
           }`}
         >
+          <div className="mb-2 flex items-center gap-2 px-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-pulse-lime">
+            <span className="h-1.5 w-1.5 rounded-full bg-pulse-lime" />
+            Выпуск 01 · 15–23 июня
+          </div>
           <div className="grid gap-1">
             {NAV_LINKS.map((link) => (
               <a

@@ -1,9 +1,9 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import { ArrowRight } from "./icons";
 
 export default function FinalConclusion() {
   return (
-    <section id="final" className="relative py-20 sm:py-28">
+    <section id="final" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 p-8 sm:p-14">
@@ -12,8 +12,8 @@ export default function FinalConclusion() {
             <div className="absolute -bottom-24 -right-16 -z-10 h-72 w-72 rounded-full bg-pulse-lime/20 blur-3xl" />
 
             <div className="mx-auto max-w-3xl text-center">
-              <span className="eyebrow justify-center">Финальный вывод</span>
-              <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.07] tracking-tight text-white sm:text-5xl">
+              <span className="eyebrow justify-center">Вердикт редакции · финальный вывод</span>
+              <h2 className="mt-6 font-display text-[1.8rem] font-extrabold leading-[1.1] tracking-tight text-white xs:text-3xl sm:text-5xl">
                 Не выбор вместо человека, <span className="text-gradient">а повод подумать</span>
               </h2>
               <p className="mx-auto mt-7 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">

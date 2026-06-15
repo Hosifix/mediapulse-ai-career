@@ -9,59 +9,73 @@ const BADGES = [
   { label: "Подростки выбирают будущее", color: "bg-pulse-lime" },
 ];
 
+const FORMATS = ["Опрос", "Интервью", "Эксперимент", "Вердикт редакции"];
+
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
+    <section id="hero" className="relative overflow-hidden pt-28 pb-14 sm:pt-36 sm:pb-24">
       <div className="container-px">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           {/* Left: copy */}
           <div>
             <Reveal>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-xs font-medium text-white/75">
+              <div className="kicker">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pulse-lime opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-pulse-lime" />
                 </span>
-                Идёт исследование · digital-media спецпроект
+                Выпуск 01 · исследование юных журналистов
               </div>
             </Reveal>
 
             <Reveal delay={60}>
-              <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.04] tracking-tight text-white sm:text-5xl md:text-6xl">
+              <h1 className="mt-5 font-display text-[1.9rem] font-extrabold leading-[1.08] tracking-tight text-white xs:text-4xl sm:text-5xl md:text-6xl">
                 Может ли <span className="text-gradient-lime">ИИ</span> помочь подростку{" "}
                 <span className="text-gradient">выбрать профессию?</span>
               </h1>
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="mt-6 max-w-xl text-lg font-medium text-white/85 sm:text-xl">
+              <p className="mt-5 max-w-xl text-base font-medium text-white/85 sm:text-xl">
                 «МедиаПульс» исследует, где заканчивается подсказка нейросети и начинается личный
                 выбор человека.
               </p>
             </Reveal>
 
             <Reveal delay={160}>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-[color:var(--muted)]">
+              <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[color:var(--muted)] sm:text-base">
                 Юные журналисты проводят опросы, интервью и эксперименты, чтобы понять: может ли
                 искусственный интеллект стать помощником в профориентации подростков — или он видит
                 только данные, но не человека.
               </p>
             </Reveal>
 
-            <Reveal delay={220}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#content-plan" className="btn btn-primary">
+            {/* Editorial topic line */}
+            <Reveal delay={200}>
+              <div className="mt-6 flex items-center gap-3 rounded-2xl border border-pulse-lime/25 bg-pulse-lime/[0.06] px-4 py-3">
+                <span className="shrink-0 rounded-full border border-pulse-lime/30 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-pulse-lime">
+                  Пульс темы
+                </span>
+                <span className="text-sm font-semibold text-white sm:text-base">
+                  ИИ советует — человек выбирает
+                </span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={240}>
+              <div className="mt-7 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
+                <a href="#content-plan" className="btn btn-primary w-full justify-center xs:w-auto">
                   Смотреть план
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="#advisors" className="btn btn-ghost">
+                <a href="#advisors" className="btn btn-ghost w-full justify-center xs:w-auto">
                   Узнать эксперимент
                 </a>
               </div>
             </Reveal>
 
-            <Reveal delay={280}>
-              <ul className="mt-10 flex flex-wrap gap-2.5">
+            <Reveal delay={290}>
+              <ul className="mt-8 flex flex-wrap gap-2">
                 {BADGES.map((badge) => (
                   <li key={badge.label} className="badge">
                     <span className={`badge-dot ${badge.color}`} />
@@ -70,9 +84,20 @@ export default function Hero() {
                 ))}
               </ul>
             </Reveal>
+
+            <Reveal delay={330}>
+              <div className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/45">
+                {FORMATS.map((format, i) => (
+                  <span key={format} className="flex items-center gap-2.5">
+                    {i > 0 ? <span className="text-pulse-lime/50">/</span> : null}
+                    {format}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
-          {/* Right: signal panel */}
+          {/* Right: editorial pulse panel */}
           <Reveal delay={160} className="relative">
             <HeroPanel />
           </Reveal>
@@ -82,30 +107,32 @@ export default function Hero() {
   );
 }
 
-function HeroPanel() {
-  const stats = [
-    { value: "9", label: "дней эфира", accent: "text-pulse-lime" },
-    { value: "4", label: "советчика", accent: "text-pulse-blue" },
-    { value: "100", label: "голосов опроса", accent: "text-pulse-violet" },
-  ];
+const ADVISORS = [
+  { label: "ИИ", dot: "bg-pulse-blue" },
+  { label: "Родитель", dot: "bg-pulse-lime" },
+  { label: "Наставник", dot: "bg-pulse-violet" },
+  { label: "Студент", dot: "bg-pulse-magenta" },
+];
 
+function HeroPanel() {
   return (
     <div className="relative">
-      <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-pulse-violet/25 via-pulse-blue/15 to-pulse-lime/20 blur-2xl" />
-      <div className="card glow-violet rounded-[2rem] p-6 sm:p-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm font-semibold text-white">
+      <div className="absolute -inset-3 -z-10 rounded-[2.5rem] bg-gradient-to-br from-pulse-violet/25 via-pulse-blue/15 to-pulse-lime/20 blur-2xl sm:-inset-4" />
+      <div className="card glow-violet rounded-[1.75rem] p-5 sm:rounded-[2rem] sm:p-7">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 text-sm font-bold text-white">
             <Signal className="h-5 w-5 text-pulse-lime" />
-            Сигнал «МедиаПульс»
+            Пульс выпуска
           </div>
-          <span className="rounded-full border border-white/12 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/60">
-            live
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-pulse-lime/30 bg-pulse-lime/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-pulse-lime">
+            <span className="h-1.5 w-1.5 rounded-full bg-pulse-lime tick-pulse" />
+            Опрос открыт
           </span>
         </div>
 
         {/* Pulse waveform */}
-        <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 bg-ink-950/60 p-4">
-          <svg viewBox="0 0 320 90" className="h-24 w-full" role="img" aria-label="Линия пульса медиапроекта">
+        <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-ink-950/60 p-3.5 sm:p-4">
+          <svg viewBox="0 0 320 80" className="h-16 w-full sm:h-20" role="img" aria-label="Линия пульса выпуска">
             <defs>
               <linearGradient id="pulseLine" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#c4f74a" />
@@ -115,7 +142,7 @@ function HeroPanel() {
               </linearGradient>
             </defs>
             <path
-              d="M0 55 H60 l10 -30 12 48 14 -64 12 70 16 -42 H150 l12 -22 14 30 12 -10 H230 l14 26 14 -48 12 30 H320"
+              d="M0 48 H58 l9 -26 11 42 13 -56 11 62 14 -38 H146 l11 -20 12 28 11 -10 H226 l12 24 13 -42 11 28 H320"
               fill="none"
               stroke="url(#pulseLine)"
               strokeWidth="2.5"
@@ -125,18 +152,29 @@ function HeroPanel() {
           </svg>
         </div>
 
-        <p className="mt-5 text-sm leading-relaxed text-white/70">
-          Одна анкета подростка проходит через четыре взгляда на будущее. Мы фиксируем каждый
-          совет и сравниваем — что общего и где проходит граница выбора.
-        </p>
+        <h2 className="mt-5 font-display text-lg font-bold leading-snug text-white sm:text-xl">
+          Один подросток — четыре советчика
+        </h2>
 
-        <div className="mt-6 grid grid-cols-3 gap-3">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-center">
-              <div className={`font-display text-2xl font-bold ${stat.accent}`}>{stat.value}</div>
-              <div className="mt-1 text-[11px] leading-tight text-white/55">{stat.label}</div>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {ADVISORS.map((advisor) => (
+            <div
+              key={advisor.label}
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm font-medium text-white/85"
+            >
+              <span className={`h-2 w-2 shrink-0 rounded-full ${advisor.dot}`} />
+              {advisor.label}
             </div>
           ))}
+        </div>
+
+        <p className="mt-4 text-sm leading-relaxed text-white/65">
+          Редакция сравнит не «кто прав», а какой совет полезнее.
+        </p>
+
+        <div className="mt-5 border-t border-white/10 pt-4 text-center text-[13px] font-semibold text-white/75">
+          1 анкета <span className="text-white/30">·</span> 4 советчика{" "}
+          <span className="text-white/30">·</span> 100 голосов опроса
         </div>
       </div>
     </div>

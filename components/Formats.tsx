@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Survey, Mic, Flask, Play, Chart, Spark, Telegram, Vk } from "./icons";
 
@@ -49,7 +49,7 @@ const FORMATS = [
 
 export default function Formats() {
   return (
-    <section id="formats" className="relative py-20 sm:py-28">
+    <section id="formats" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="07 / Форматы"
@@ -84,7 +84,7 @@ export default function Formats() {
             <p className="text-base font-medium text-white/85">
               Каждый формат выходит ежедневно — там, где подростки на самом деле читают.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
                 <Vk className="h-5 w-5 text-pulse-blue" />
                 VK
@@ -92,6 +92,10 @@ export default function Formats() {
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
                 <Telegram className="h-5 w-5 text-pulse-blue" />
                 Telegram
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
+                <Mic className="h-5 w-5 text-pulse-magenta" />
+                Подкаст
               </span>
             </div>
           </div>

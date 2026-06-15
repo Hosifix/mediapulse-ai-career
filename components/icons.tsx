@@ -131,6 +131,15 @@ export function Quote(props: IconProps) {
   );
 }
 
+export function Shield(props: IconProps) {
+  return (
+    <svg {...base(props)}>
+      <path d="M12 3 5 6v5.5c0 4 2.9 7.3 7 8.5 4.1-1.2 7-4.5 7-8.5V6l-7-3Z" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  );
+}
+
 export function Telegram(props: IconProps) {
   return (
     <svg {...base(props)}>

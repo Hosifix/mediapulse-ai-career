@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 
 type Stat = {
@@ -27,7 +27,7 @@ const STATS: Stat[] = [
 
 export default function Kpi() {
   return (
-    <section id="kpi" className="relative py-20 sm:py-28">
+    <section id="kpi" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="08 / KPI"

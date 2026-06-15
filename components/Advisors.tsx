@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import { Brain, HeartHand, Compass, GradCap } from "./icons";
 
 const ADVISORS = [
@@ -46,7 +46,7 @@ const ADVISORS = [
 
 export default function Advisors() {
   return (
-    <section id="advisors" className="relative py-20 sm:py-28">
+    <section id="advisors" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <Reveal className="max-w-3xl">
           <div className="flex items-center gap-4">
@@ -59,6 +59,7 @@ export default function Advisors() {
           <p className="lead mt-5">
             Одна анкета. Один подросток. Четыре взгляда на будущее. Мы передаём одинаковое описание
             участника редакции четырём «советчикам» и сравниваем, какие профессии они предложат.
+            Редакция оценивает не «кто прав», а какой совет полезнее.
           </p>
         </Reveal>
 

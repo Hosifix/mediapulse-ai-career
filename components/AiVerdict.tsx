@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Spark } from "./icons";
 
@@ -13,7 +13,7 @@ const QUESTIONS = [
 
 export default function AiVerdict() {
   return (
-    <section id="ai-verdict" className="relative py-20 sm:py-28">
+    <section id="ai-verdict" className="relative py-16 sm:py-24 lg:py-28">
       <div className="container-px">
         <SectionHeading
           index="05 / Рубрика"
