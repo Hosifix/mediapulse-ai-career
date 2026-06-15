@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Force -Name; Write-Output \"---NODE---\"; \\(Get-Command node\\).Source; node --version; Write-Output \"---NPM---\"; npm --version)",
+      "PowerShell(npm install --no-audit --no-fund)"
+    ]
+  }
+}
