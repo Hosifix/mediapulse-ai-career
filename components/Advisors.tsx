@@ -1,5 +1,13 @@
-﻿import Reveal from "./Reveal";
-import { Brain, HeartHand, Compass, GradCap } from "./icons";
+﻿import { Fragment } from "react";
+import Reveal from "./Reveal";
+import { Brain, HeartHand, Compass, GradCap, ArrowRight, Survey } from "./icons";
+
+const FLOW: { label: string; icon?: typeof Survey; highlight?: boolean }[] = [
+  { label: "Одна анкета", icon: Survey },
+  { label: "4 советчика" },
+  { label: "Сравнение профессий" },
+  { label: "Где проходит граница выбора?", highlight: true },
+];
 
 const ADVISORS = [
   {
@@ -63,18 +71,33 @@ export default function Advisors() {
           </p>
         </Reveal>
 
-        {/* Flow strip */}
+        {/* Flow strip — vertical stepper on mobile, horizontal on desktop */}
         <Reveal delay={80}>
-          <div className="mt-10 flex flex-wrap items-center gap-3 rounded-3xl border border-white/10 bg-white/[0.02] p-5 text-sm font-medium text-white/75">
-            <span className="rounded-full bg-white/5 px-4 py-2">📋 Одна анкета</span>
-            <span className="text-white/30">→</span>
-            <span className="rounded-full bg-white/5 px-4 py-2">4 советчика</span>
-            <span className="text-white/30">→</span>
-            <span className="rounded-full bg-white/5 px-4 py-2">Сравнение профессий</span>
-            <span className="text-white/30">→</span>
-            <span className="rounded-full bg-gradient-to-r from-pulse-lime/20 to-pulse-blue/20 px-4 py-2 text-white">
-              Где проходит граница выбора?
-            </span>
+          <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.02] p-4 sm:p-5">
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
+              {FLOW.map((node, i) => {
+                const Icon = node.icon;
+                return (
+                  <Fragment key={node.label}>
+                    {i > 0 ? (
+                      <span className="flex shrink-0 justify-center sm:items-center" aria-hidden="true">
+                        <ArrowRight className="h-4 w-4 rotate-90 text-pulse-lime/55 sm:rotate-0 sm:text-white/30" />
+                      </span>
+                    ) : null}
+                    <span
+                      className={`flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium sm:py-2 ${
+                        node.highlight
+                          ? "rounded-2xl border border-pulse-lime/30 bg-gradient-to-r from-pulse-lime/20 to-pulse-blue/15 font-semibold text-white sm:rounded-full"
+                          : "rounded-2xl border border-white/10 bg-white/[0.04] text-white/80 sm:rounded-full sm:bg-white/5"
+                      }`}
+                    >
+                      {Icon ? <Icon className="h-4 w-4 shrink-0 text-pulse-lime" /> : null}
+                      {node.label}
+                    </span>
+                  </Fragment>
+                );
+              })}
+            </div>
           </div>
         </Reveal>
 

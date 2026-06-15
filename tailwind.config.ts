@@ -13,16 +13,16 @@ const config: Config = {
       },
       colors: {
         ink: {
-          950: "#05050c",
-          900: "#08070f",
-          850: "#0b0a16",
-          800: "#11101f",
+          950: "#070809",
+          900: "#0c0d11",
+          850: "#101116",
+          800: "#15161c",
         },
         pulse: {
           lime: "#c4f74a",
-          blue: "#5b9dff",
-          violet: "#a98bff",
-          magenta: "#f25fd0",
+          blue: "#74a4ec",
+          violet: "#9a93c6",
+          magenta: "#cf8fa8",
         },
       },
       borderRadius: {

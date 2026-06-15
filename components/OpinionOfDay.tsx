@@ -12,13 +12,13 @@ const VOICES = [
   {
     text: "Я боялась, что нейросеть посоветует «модное». А она задала вопросы, на которые мы с сыном раньше не отвечали.",
     author: "Родитель",
-    role: "интервью 17.06",
+    role: "из интервью",
     dot: "bg-pulse-lime",
   },
   {
     text: "ИИ хорошо видит навыки. Но мотивацию и характер он не чувствует — это заметно только в деле.",
     author: "Наставник",
-    role: "интервью 20.06",
+    role: "из интервью",
     dot: "bg-pulse-violet",
   },
 ];
@@ -59,7 +59,7 @@ export default function OpinionOfDay() {
                 </span>
                 <div>
                   <div className="text-sm font-semibold text-white">Участница редакции «МедиаПульс»</div>
-                  <div className="text-sm text-white/55">16 лет · эксперимент 21.06</div>
+                  <div className="text-sm text-white/55">16 лет · участница эксперимента</div>
                 </div>
               </figcaption>
             </figure>

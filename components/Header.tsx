@@ -44,16 +44,12 @@ export default function Header() {
           <div className="flex items-center gap-2.5">
             <span className="inline-flex items-center gap-1.5 text-pulse-lime">
               <span className="h-1.5 w-1.5 rounded-full bg-pulse-lime tick-pulse" />
-              Выпуск 01
+              Спецпроект
             </span>
             <span className="hidden h-3 w-px bg-white/15 sm:block" />
-            <span className="hidden sm:inline">Редакционное исследование</span>
+            <span className="hidden sm:inline">Школа юного журналиста</span>
           </div>
-          <div className="flex items-center gap-2.5">
-            <span>15–23 июня</span>
-            <span className="hidden h-3 w-px bg-white/15 sm:block" />
-            <span className="hidden text-white/45 sm:inline">VK · Telegram · Подкаст</span>
-          </div>
+          <span className="text-white/45">VK · Telegram · Подкаст</span>
         </div>
       </div>
 
@@ -140,7 +136,7 @@ export default function Header() {
         >
           <div className="mb-2 flex items-center gap-2 px-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-pulse-lime">
             <span className="h-1.5 w-1.5 rounded-full bg-pulse-lime" />
-            Выпуск 01 · 15–23 июня
+            Спецпроект · Школа юного журналиста
           </div>
           <div className="grid gap-1">
             {NAV_LINKS.map((link) => (

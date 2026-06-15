@@ -1,4 +1,5 @@
 import { Shield, Telegram, Vk } from "./icons";
+import { SOCIAL, EXTERNAL_LINK_PROPS } from "@/lib/social";
 
 const NAV = [
   { label: "Главный вопрос", href: "#main-question" },
@@ -52,14 +53,18 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="#hero"
+                href={SOCIAL.vk}
+                {...EXTERNAL_LINK_PROPS}
+                aria-label="Сообщество «МедиаПульс» во ВКонтакте"
                 className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/25"
               >
                 <Vk className="h-5 w-5 text-pulse-blue" />
                 VK
               </a>
               <a
-                href="#hero"
+                href={SOCIAL.telegram}
+                {...EXTERNAL_LINK_PROPS}
+                aria-label="Канал «МедиаПульс» в Telegram"
                 className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/25"
               >
                 <Telegram className="h-5 w-5 text-pulse-blue" />
@@ -85,7 +90,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">О проекте</h3>
             <ul className="mt-5 space-y-3 text-sm text-white/65">
               <li>Школа юного журналиста</li>
-              <li>Выпуск 01 · 15–23 июня</li>
+              <li>Редакционное исследование</li>
               <li>ИИ и выбор профессии</li>
               <li>Подростки выбирают будущее</li>
             </ul>

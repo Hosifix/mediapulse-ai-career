@@ -1,6 +1,7 @@
 ﻿import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { Survey, Mic, Flask, Play, Chart, Spark, Telegram, Vk } from "./icons";
+import { SOCIAL, EXTERNAL_LINK_PROPS } from "@/lib/social";
 
 const FORMATS = [
   {
@@ -85,14 +86,24 @@ export default function Formats() {
               Каждый формат выходит ежедневно — там, где подростки на самом деле читают.
             </p>
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
+              <a
+                href={SOCIAL.vk}
+                {...EXTERNAL_LINK_PROPS}
+                aria-label="Сообщество «МедиаПульс» во ВКонтакте"
+                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/25 hover:bg-white/10"
+              >
                 <Vk className="h-5 w-5 text-pulse-blue" />
                 VK
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
+              </a>
+              <a
+                href={SOCIAL.telegram}
+                {...EXTERNAL_LINK_PROPS}
+                aria-label="Канал «МедиаПульс» в Telegram"
+                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/25 hover:bg-white/10"
+              >
                 <Telegram className="h-5 w-5 text-pulse-blue" />
                 Telegram
-              </span>
+              </a>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white">
                 <Mic className="h-5 w-5 text-pulse-magenta" />
                 Подкаст
